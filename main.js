@@ -39,7 +39,7 @@ const filterDataPokemon = _content => {
     //Image
     let resource = _content['sprites']
     imgURL = resource['other']['dream_world']['front_default']
-    info.push(name, imgURL);    
+    info.push(name, imgURL, stats);    
     console.log(info)
     constructCard(info)
 }
@@ -51,6 +51,15 @@ const constructCard = (_info) => {
 
     let cardPokemonTitle = document.getElementsByClassName('card-pokemon-title')[index];
     let pokemonImg = document.getElementsByClassName('pokemon-image')[index];
+
+    let boxStats = document.getElementsByClassName('box-stats')[index];
+
+    for(let pos in _info[2]) {
+        let stat = document.createElement('p');
+        stat.setAttribute('class', 'stat')
+        stat.textContent = _info[2][pos];
+        boxStats.appendChild(stat)
+    }
 
     cardPokemonTitle.textContent = _info[0];
     pokemonImg.setAttribute('src', _info[1])
@@ -67,6 +76,8 @@ const CARD = `
                     <img src="#" class="pokemon-image">
                 </div>
                 <div class="sub-card">               
+                    <div class="box-stats">
+                    </div>
                 </div>
             </div>
             `
