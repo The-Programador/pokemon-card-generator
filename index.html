@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container-search">
-        <label for="pk1" class="label-search">Pokémon 1</label>
-        <input id="pk1" class="search-pokemon" type="text">
-        <label for="pk2" class="label-search">Pokémon 2</label>
-        <input class="search-pokemon" type="text">
-        <button class="button" onclick="getInput()">Procurar</button>
+        <div class="sub-search">
+            <label for="pk1" class="label-search">Pokémon 1</label>
+            <input id="pk1" class="search-pokemon" type="text" placeholder="Name or Id">
+            <div  class="menu hidden-menu"></div>
+        </div>
+        
+        <div class="sub-search">
+            <label for="pk2" class="label-search">Pokémon 2</label>
+            <input id="pk2" class="search-pokemon" type="text" placeholder="Name or Id">
+            <div class="menu hidden-menu"></div>
+        </div>
+        <button class="button">Search</button>
     </div>
     
     <section class="card-container">
+        <div class="before-search">
+            <p class="msg-before-search">Let's Go, Pokémon trainer!</p>
+            <div class="img-box">
+                <img class="img-before-search" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"alt="">
+            </div>
+        </div>
     </section>
 
     <!--Scripts-->
+    <script src="menu.js"></script>
     <script src="main.js"></script>
+    <script>
+        //Script Embutido!
+    </script>
 </body>
 </html>
